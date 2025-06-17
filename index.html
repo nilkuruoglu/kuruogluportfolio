@@ -4,91 +4,107 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Nil Kuruoğlu | Portfolyo</title>
-  <link rel="stylesheet" href="styles.css?v=10">
+
+  <!-- GLightbox CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" />
+
+  <!-- Proje stilimiz -->
+  <link rel="stylesheet" href="styles.css?v=11">
 </head>
 <body>
 
   <!-- 1. Menü -->
   <nav>
-    <button id="theme-toggle" aria-label="Tema değiştir">🌙</button>
-    <a href="#home">Anasayfa</a>
-    <a href="#about">Hakkımda</a>
-    <a href="#skills">Beceriler</a>
-    <a href="#projects">Projeler</a>
-    <a href="#contact">İletişim</a>
+    <button id="theme-toggle" aria-label="Tema değiştir">
+      <!-- Sun / Moon ikonları yerine basit SVG -->
+      <svg width="20" height="20" viewBox="0 0 24 24"><path fill="currentColor" d="M12 3a9 9 0 0 0 0 18 9 9 0 0 1 0-18z"/></svg>
+    </button>
+    <a href="#home"><svg class="nav-icon" width="12" height="12" viewBox="0 0 24 24"><path fill="currentColor" d="M10 17l5-5-5-5v10z"/></svg>Anasayfa</a>
+    <a href="#about"><svg class="nav-icon" width="12" height="12" viewBox="0 0 24 24"><path fill="currentColor" d="M10 17l5-5-5-5v10z"/></svg>Hakkımda</a>
+    <a href="#skills"><svg class="nav-icon" width="12" height="12" viewBox="0 0 24 24"><path fill="currentColor" d="M10 17l5-5-5-5v10z"/></svg>Beceriler</a>
+    <a href="#projects"><svg class="nav-icon" width="12" height="12" viewBox="0 0 24 24"><path fill="currentColor" d="M10 17l5-5-5-5v10z"/></svg>Projeler</a>
+    <a href="#contact"><svg class="nav-icon" width="12" height="12" viewBox="0 0 24 24"><path fill="currentColor" d="M10 17l5-5-5-5v10z"/></svg>İletişim</a>
   </nav>
 
-  <!-- 3. Beceriler Bölümü (banner altı cover) -->
-  <section id="skills" class="skills-cover fade-in">
-    <h2>Beceriler</h2>
-    <div class="skill">
-      <div class="skill-name">NetCAD</div>
-      <div class="skill-bar"><div class="bar-fill" style="width:85%"></div></div>
-    </div>
-    <div class="skill">
-      <div class="skill-name">QGIS</div>
-      <div class="skill-bar"><div class="bar-fill" style="width:80%"></div></div>
-    </div>
-    <div class="skill">
-      <div class="skill-name">Photoshop</div>
-      <div class="skill-bar"><div class="bar-fill" style="width:90%"></div></div>
-    </div>
-    <div class="skill">
-      <div class="skill-name">Veri Analizi</div>
-      <div class="skill-bar"><div class="bar-fill" style="width:75%"></div></div>
-    </div>
-    <div class="skill">
-      <div class="skill-name">AutoCAD</div>
-      <div class="skill-bar"><div class="bar-fill" style="width:85%"></div></div>
-    </div>
-    <div class="skill">
-      <div class="skill-name">Adobe Creative Suite</div>
-      <div class="skill-bar"><div class="bar-fill" style="width:88%"></div></div>
-    </div>
-    <div class="skill">
-      <div class="skill-name">Microsoft Office</div>
-      <div class="skill-bar"><div class="bar-fill" style="width:95%"></div></div>
-    </div>
-    <div class="skill">
-      <div class="skill-name">Stratejik Planlama</div>
-      <div class="skill-bar"><div class="bar-fill" style="width:80%"></div></div>
-    </div>
-    <div class="skill">
-      <div class="skill-name">Python</div>
-      <div class="skill-bar"><div class="bar-fill" style="width:70%"></div></div>
-    </div>
-    <div class="skill">
-      <div class="skill-name">Etkili İletişim</div>
-      <div class="skill-bar"><div class="bar-fill" style="width:90%"></div></div>
-    </div>
-    <div class="skill">
-      <div class="skill-name">Takım Çalışması</div>
-      <div class="skill-bar"><div class="bar-fill" style="width:92%"></div></div>
-    </div>
-    <div class="skill">
-      <div class="skill-name">Liderlik &amp; Koçluk</div>
-      <div class="skill-bar"><div class="bar-fill" style="width:85%"></div></div>
-    </div>
-    <div class="skill">
-      <div class="skill-name">Müşteri ve Paydaş İlişkileri</div>
-      <div class="skill-bar"><div class="bar-fill" style="width:88%"></div></div>
-    </div>
-    <div class="skill">
-      <div class="skill-name">Problem Çözme</div>
-      <div class="skill-bar"><div class="bar-fill" style="width:90%"></div></div>
-    </div>
-    <div class="skill">
-      <div class="skill-name">Esneklik &amp; Uyumluluk</div>
-      <div class="skill-bar"><div class="bar-fill" style="width:95%"></div></div>
-    </div>
-  </section>
+  <!-- 2. Parallax Hero Banner -->
+  <header class="hero fade-in" id="home">
+    <div class="parallax"></div>
+    <h1>Merhaba, ben Nil Sude Kuruoğlu</h1>
+    <p>Şehir &amp; Bölge Planlama | GIS &amp; Tasarım</p>
+  </header>
 
-  <!-- 4. Ana İçerik -->
+  <!-- 3. Layout: Sidebar + Main -->
   <div class="layout">
 
+    <!-- 3a. Sidebar: Beceriler -->
+    <aside id="skills" class="fade-in">
+      <h2>Beceriler</h2>
+      <div class="skill">
+        <div class="skill-name">NetCAD</div>
+        <div class="skill-bar"><div class="bar-fill" style="width:85%"></div></div>
+      </div>
+      <div class="skill">
+        <div class="skill-name">QGIS</div>
+        <div class="skill-bar"><div class="bar-fill" style="width:80%"></div></div>
+      </div>
+      <div class="skill">
+        <div class="skill-name">Photoshop</div>
+        <div class="skill-bar"><div class="bar-fill" style="width:90%"></div></div>
+      </div>
+      <div class="skill">
+        <div class="skill-name">Veri Analizi</div>
+        <div class="skill-bar"><div class="bar-fill" style="width:75%"></div></div>
+      </div>
+      <div class="skill">
+        <div class="skill-name">AutoCAD</div>
+        <div class="skill-bar"><div class="bar-fill" style="width:85%"></div></div>
+      </div>
+      <div class="skill">
+        <div class="skill-name">Adobe Creative Suite</div>
+        <div class="skill-bar"><div class="bar-fill" style="width:88%"></div></div>
+      </div>
+      <div class="skill">
+        <div class="skill-name">Microsoft Office</div>
+        <div class="skill-bar"><div class="bar-fill" style="width:95%"></div></div>
+      </div>
+      <div class="skill">
+        <div class="skill-name">Stratejik Planlama</div>
+        <div class="skill-bar"><div class="bar-fill" style="width:80%"></div></div>
+      </div>
+      <div class="skill">
+        <div class="skill-name">Python</div>
+        <div class="skill-bar"><div class="bar-fill" style="width:70%"></div></div>
+      </div>
+      <div class="skill">
+        <div class="skill-name">Etkili İletişim</div>
+        <div class="skill-bar"><div class="bar-fill" style="width:90%"></div></div>
+      </div>
+      <div class="skill">
+        <div class="skill-name">Takım Çalışması</div>
+        <div class="skill-bar"><div class="bar-fill" style="width:92%"></div></div>
+      </div>
+      <div class="skill">
+        <div class="skill-name">Liderlik &amp; Koçluk</div>
+        <div class="skill-bar"><div class="bar-fill" style="width:85%"></div></div>
+      </div>
+      <div class="skill">
+        <div class="skill-name">Müşteri ve Paydaş İlişkileri</div>
+        <div class="skill-bar"><div class="bar-fill" style="width:88%"></div></div>
+      </div>
+      <div class="skill">
+        <div class="skill-name">Problem Çözme</div>
+        <div class="skill-bar"><div class="bar-fill" style="width:90%"></div></div>
+      </div>
+      <div class="skill">
+        <div class="skill-name">Esneklik &amp; Uyumluluk</div>
+        <div class="skill-bar"><div class="bar-fill" style="width:95%"></div></div>
+      </div>
+    </aside>
+
+    <!-- 3b. Ana içerik -->
     <main class="main-content">
 
-      <!-- 5. Hakkımda -->
+      <!-- 4. Hakkımda -->
       <section id="about" class="container about fade-in">
         <h2>Hakkımda</h2>
         <p>2000 yılında Artvin’in Arhavi ilçesinde doğdum. 2014–2018 yılları arasında Arhavi Anadolu Lisesi’nden mezun oldum. 2025 yılında ise Mersin Üniversitesi Şehir ve Bölge Planlama Bölümü’nü yine %100 İngilizce eğitim programında tamamlayarak akademik yolculuğumu sonlandırdım.</p>
@@ -96,54 +112,58 @@
         <p>Yaratıcı yaklaşımım ve güçlü estetik duyarlılığımla her projeyi hem fonksiyonel hem görsel açıdan öne çıkarıyorum. Photoshop ve Illustrator ile hazırladığım görsel materyaller, fikirlerimi paydaşlara net ve ilgi çekici biçimde aktarmamı sağladı. Hızlı öğrenme yeteneğim ve esnek çalışma disiplinimle, insan odaklı ve yenilikçi kent tasarımlarına değer katmayı sürdürüyorum.</p>
       </section>
 
-      <!-- 6. Projeler -->
+      <!-- 5. Projeler -->
       <section id="projects" class="container projects fade-in">
         <h2>Projeler</h2>
         <div class="project-grid">
+          <!-- Her projede aşağıdaki yapıyı koruyup `glightbox` sınıfını ekledik -->
           <div class="project-card fade-in">
-            <a href="images/Ankara Conceptual Diagram Çalışması.jpg" target="_blank">
-              <img src="images/Ankara Conceptual Diagram Çalışması.jpg" alt="Ankara Conceptual Diagram Çalışması">
+            <a href="images/Ankara Conceptual Diagram Çalışması.jpg"
+               class="glightbox"
+               data-gallery="projects">
+              <img src="images/Ankara Conceptual Diagram Çalışması.jpg"
+                   alt="Ankara Conceptual Diagram Çalışması">
             </a>
             <h3>Ankara Conceptual Diagram Çalışması</h3>
           </div>
           <div class="project-card fade-in">
-            <a href="images/Merzifon Proje 1.png" target="_blank">
+            <a href="images/Merzifon Proje 1.png" class="glightbox" data-gallery="projects">
               <img src="images/Merzifon Proje 1.png" alt="Merzifon Proje 1">
             </a>
             <h3>Merzifon Proje 1</h3>
           </div>
           <div class="project-card fade-in">
-            <a href="images/Merzifon Proje 2.jpg" target="_blank">
+            <a href="images/Merzifon Proje 2.jpg" class="glightbox" data-gallery="projects">
               <img src="images/Merzifon Proje 2.jpg" alt="Merzifon Proje 2">
             </a>
             <h3>Merzifon Proje 2</h3>
           </div>
           <div class="project-card fade-in">
-            <a href="images/Ankara Sentez 1.jpg" target="_blank">
+            <a href="images/Ankara Sentez 1.jpg" class="glightbox" data-gallery="projects">
               <img src="images/Ankara Sentez 1.jpg" alt="Ankara Sentez 1">
             </a>
             <h3>Ankara Sentez 1</h3>
           </div>
           <div class="project-card fade-in">
-            <a href="images/Ankara Sentez 2.jpg" target="_blank">
+            <a href="images/Ankara Sentez 2.jpg" class="glightbox" data-gallery="projects">
               <img src="images/Ankara Sentez 2.jpg" alt="Ankara Sentez 2">
             </a>
             <h3>Ankara Sentez 2</h3>
           </div>
           <div class="project-card fade-in">
-            <a href="images/Ankara Proje 1.jpg" target="_blank">
+            <a href="images/Ankara Proje 1.jpg" class="glightbox" data-gallery="projects">
               <img src="images/Ankara Proje 1.jpg" alt="Ankara Proje 1">
             </a>
             <h3>Ankara Proje 1</h3>
           </div>
           <div class="project-card fade-in">
-            <a href="images/Ankara Proje 2.jpg" target="_blank">
+            <a href="images/Ankara Proje 2.jpg" class="glightbox" data-gallery="projects">
               <img src="images/Ankara Proje 2.jpg" alt="Ankara Proje 2">
             </a>
             <h3>Ankara Proje 2</h3>
           </div>
           <div class="project-card fade-in">
-            <a href="images/Ankara Proje 3.jpg" target="_blank">
+            <a href="images/Ankara Proje 3.jpg" class="glightbox" data-gallery="projects">
               <img src="images/Ankara Proje 3.jpg" alt="Ankara Proje 3">
             </a>
             <h3>Ankara Proje 3</h3>
@@ -152,25 +172,34 @@
       </section>
 
     </main>
-
   </div>
 
-  <!-- 7. Footer -->
+  <!-- 6. Footer -->
   <footer class="footer fade-in">
     <p>© 2025 Nil Sude Kuruoğlu</p>
   </footer>
 
-  <!-- 8. Back to Top Butonu -->
-  <button id="back-to-top" aria-label="Başa dön">↑</button>
+  <!-- 7. Back to Top Butonu -->
+  <button id="back-to-top" aria-label="Başa dön">
+    <svg class="back-icon" width="20" height="20" viewBox="0 0 24 24"><path fill="currentColor" d="M12 8l-6 6h12z"/></svg>
+  </button>
 
-  <!-- 9. Script’ler -->
+  <!-- 8. GLightbox JS -->
+  <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
+
+  <!-- 9. Kendi script’lerimiz -->
   <script>
+    // GLightbox initialize
+    const lightbox = GLightbox({ selector: '.glightbox' });
+
     // Tema Toggle
     const themeBtn = document.getElementById('theme-toggle');
     themeBtn.onclick = () => {
       const next = document.documentElement.getAttribute('data-theme') === 'dark' ? '' : 'dark';
       document.documentElement.setAttribute('data-theme', next);
-      themeBtn.textContent = next ? '🌞' : '🌙';
+      themeBtn.innerHTML = next
+        ? '<svg width="20" height="20" viewBox="0 0 24 24"><path fill="currentColor" d="M12 3a9 9 0 0 0 0 18 9 9 0 0 1 0-18z"/></svg>'
+        : '<svg width="20" height="20" viewBox="0 0 24 24"><path fill="currentColor" d="M2 12a10 10 0 1 0 20 0A10 10 0 0 0 2 12z"/></svg>';
     };
 
     // Fade-in Animasyon
