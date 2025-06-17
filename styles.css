@@ -59,3 +59,23 @@ header.hero p {
   font-size: 1.1em;
   margin-top: 10px;
 }
+/* === HERO BANNER === */
+header.hero {
+  /* arka planı doğru klasörden çağır */
+  background: url('images/banner.jpg') no-repeat center/cover;
+  height: 300px;               /* yükseklik, istersen 400px yapabilirsin */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #fff;                 /* yazılar beyaz */
+  text-shadow: 1px 1px 4px rgba(0,0,0,0.7);
+}
+header.hero h1 {
+  font-size: 2.5em;
+  margin: 0;
+}
+header.hero p {
+  font-size: 1.1em;
+  margin-top: 10px;
+}
