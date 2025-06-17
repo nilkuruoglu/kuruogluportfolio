@@ -1,34 +1,21 @@
-/* ======================================= */
-/* 0. Koyu/Açık Tema Değişkenleri          */
-/* ======================================= */
 :root {
-  --bg: #dcdedd;    /* açık mod arka plan */
-  --fg: #333;       /* açık mod yazı rengi */
+  --bg: #dcdedd;
+  --fg: #333;
   --nav-bg: #FFB380;
   --section-bg: #fff;
 }
 [data-theme="dark"] {
-  --bg: #2b2b2b;    /* koyu mod arka plan */
-  --fg: #eee;       /* koyu mod yazı rengi */
+  --bg: #2b2b2b;
+  --fg: #eee;
   --nav-bg: #a66b3b;
   --section-bg: #3a3a3a;
 }
 
-/* ======================================= */
-/* 1. Reset + Smooth Scroll                */
-/* ======================================= */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-html {
-  scroll-behavior: smooth;
-}
+/* Reset + Smooth Scroll */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
 
-/* ======================================= */
-/* 2. Genel Sayfa Ayarları                 */
-/* ======================================= */
+/* Genel Ayarlar */
 body {
   font-family: 'Lato', sans-serif;
   background-color: var(--bg);
@@ -37,9 +24,7 @@ body {
   padding-top: 60px;
 }
 
-/* ======================================= */
-/* 3. Konteyner                           */
-/* ======================================= */
+/* Konteyner */
 .container {
   max-width: 1000px;
   margin: 0 auto;
@@ -48,9 +33,7 @@ body {
   border-radius: 8px;
 }
 
-/* ======================================= */
-/* 4. Menü (Sticky)                       */
-/* ======================================= */
+/* Menü (Sticky) */
 nav {
   position: sticky;
   top: 0;
@@ -72,15 +55,11 @@ nav a {
   text-decoration: none;
   font-weight: bold;
 }
-nav a:hover {
-  text-decoration: underline;
-}
+nav a:hover { text-decoration: underline; }
 
-/* ======================================= */
-/* 5. Hero Banner                         */
-/* ======================================= */
+/* Hero Banner – Parallax */
 header.hero {
-  background: url('images/banner.jpg') no-repeat center/cover;
+  background: url('images/banner.jpg') no-repeat center/cover fixed;
   height: 300px;
   display: flex;
   flex-direction: column;
@@ -90,18 +69,19 @@ header.hero {
   text-shadow: 1px 1px 4px rgba(0,0,0,0.7);
 }
 
-/* ======================================= */
-/* 6. Bölüm Başlıkları ve Fade-In         */
-/* ======================================= */
-section, footer, header {
+/* Fade-In Animasyonları */
+.fade-in,
+footer {
   opacity: 0;
   transform: translateY(20px);
   transition: opacity 0.6s ease-out, transform 0.6s ease-out;
 }
-section.visible, header.visible, footer.visible {
+.visible {
   opacity: 1;
   transform: translateY(0);
 }
+
+/* Bölüm Başlıkları */
 section h2 {
   margin-bottom: 10px;
   border-bottom: 2px solid var(--fg);
@@ -109,9 +89,7 @@ section h2 {
   padding-bottom: 5px;
 }
 
-/* ======================================= */
-/* 7. Projeler Bölümü – Grid ve Kartlar   */
-/* ======================================= */
+/* Projeler Grid */
 section#projects .project-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -132,14 +110,9 @@ section#projects .project-grid {
   border-radius: 4px;
   margin-bottom: 10px;
 }
-.project-card a {
-  display: block;
-  text-decoration: none;
-}
+.project-card a { display: block; text-decoration: none; }
 
-/* ======================================= */
-/* 8. İletişim & Footer                   */
-/* ======================================= */
+/* İletişim & Footer */
 section#contact {
   background-color: var(--section-bg);
   padding: 20px;
@@ -150,4 +123,27 @@ footer {
   background-color: var(--nav-bg);
   color: #fff;
   margin-top: 40px;
+}
+
+/* Back to Top Butonu */
+#back-to-top {
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+  width: 50px;
+  height: 50px;
+  background-color: var(--nav-bg);
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  font-size: 1.5em;
+  cursor: pointer;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s;
+  z-index: 100;
+}
+#back-to-top.visible {
+  opacity: 1;
+  pointer-events: auto;
 }
