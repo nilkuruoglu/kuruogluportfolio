@@ -42,7 +42,7 @@ nav a:hover {
 }
 /* HERO BANNER */
 header.hero {
-  background: url('images/banner.jpg') no-repeat center/cover;
+  background: url('images/yenibanner.jpg') no-repeat center/cover;
   height: 300px;
   display: flex;
   flex-direction: column;
