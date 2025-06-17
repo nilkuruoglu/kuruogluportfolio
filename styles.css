@@ -15,7 +15,7 @@ html {
 /* ======================================= */
 body {
   font-family: 'Lato', sans-serif;
-  background-color: #c3d4cf; /* Güncel pastel arka plan rengi */
+  background-color: #dcdedd; /* Yeni pastel arka plan rengi */
   color: #333;
   line-height: 1.6;
   padding-top: 60px; /* Menü sabit olduğundan içerik altına it */
@@ -56,7 +56,7 @@ nav a:hover {
 /* ======================================= */
 header.hero {
   background: url('images/banner.jpg') no-repeat center/cover;
-  height: 300px;              /* İstersen 400px yapabilirsin */
+  height: 300px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -114,8 +114,8 @@ section#projects .project-grid {
 
 .project-card img {
   width: 100%;
-  height: 200px;         /* Tüm kartlarda aynı yükseklik */
-  object-fit: cover;     /* Oranı bozmadan kırp */
+  height: 200px;
+  object-fit: cover;
   object-position: center;
   border-radius: 4px;
   margin-bottom: 10px;
@@ -149,3 +149,4 @@ footer {
   color: #fff;
   margin-top: 40px;
 }
+
