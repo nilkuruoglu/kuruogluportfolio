@@ -97,17 +97,6 @@ section#about {
   padding: 20px;
   border-radius: 8px;
 }
-section#about .profile-pic {
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 3px solid #0066cc;
-}
-section#about .about-text h2 {
-  color: #0066cc;
-  margin-bottom: 10px;
-}
 
 /* ======================================= */
 /* 8. Projeler Bölümü – Grid ve Kartlar   */
@@ -133,6 +122,12 @@ section#projects .project-grid {
   object-position: center;
   border-radius: 4px;
   margin-bottom: 10px;
+}
+
+/* Görsel link bloğu */
+.project-card a {
+  display: block;
+  text-decoration: none;
 }
 
 /* ======================================= */
