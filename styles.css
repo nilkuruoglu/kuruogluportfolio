@@ -1,0 +1,9 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: Arial, sans-serif; line-height: 1.6; padding: 20px; }
+nav { background: #333; padding: 10px; text-align: center; }
+nav a { color: #fff; margin: 0 15px; text-decoration: none; }
+section { margin: 40px 0; }
+section h2 { margin-bottom: 10px; border-bottom: 2px solid #333; display: inline-block; }
+.project { margin-bottom: 20px; }
+.project img { max-width: 100%; height: auto; display: block; }
+footer { text-align: center; margin-top: 40px; font-size: 0.9em; color: #555; }
