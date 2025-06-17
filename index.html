@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Nil Kuruoğlu | Portfolyo</title>
-  <link rel="stylesheet" href="styles.css?v=8">
+  <link rel="stylesheet" href="styles.css?v=10">
 </head>
 <body>
 
@@ -13,44 +13,89 @@
     <button id="theme-toggle" aria-label="Tema değiştir">🌙</button>
     <a href="#home">Anasayfa</a>
     <a href="#about">Hakkımda</a>
+    <a href="#skills">Beceriler</a>
     <a href="#projects">Projeler</a>
     <a href="#contact">İletişim</a>
   </nav>
 
-  <!-- 2. Sidebar + Main Wrapper -->
+  <!-- 2. Parallax Hero Banner -->
+  <header class="hero fade-in" id="home">
+    <div class="parallax"></div>
+    <h1>Merhaba, ben Nil Sude Kuruoğlu</h1>
+    <p>Şehir &amp; Bölge Planlama | GIS &amp; Tasarım</p>
+  </header>
+
+  <!-- 3. Beceriler Bölümü (banner altı cover) -->
+  <section id="skills" class="skills-cover fade-in">
+    <h2>Beceriler</h2>
+    <div class="skill">
+      <div class="skill-name">NetCAD</div>
+      <div class="skill-bar"><div class="bar-fill" style="width:85%"></div></div>
+    </div>
+    <div class="skill">
+      <div class="skill-name">QGIS</div>
+      <div class="skill-bar"><div class="bar-fill" style="width:80%"></div></div>
+    </div>
+    <div class="skill">
+      <div class="skill-name">Photoshop</div>
+      <div class="skill-bar"><div class="bar-fill" style="width:90%"></div></div>
+    </div>
+    <div class="skill">
+      <div class="skill-name">Veri Analizi</div>
+      <div class="skill-bar"><div class="bar-fill" style="width:75%"></div></div>
+    </div>
+    <div class="skill">
+      <div class="skill-name">AutoCAD</div>
+      <div class="skill-bar"><div class="bar-fill" style="width:85%"></div></div>
+    </div>
+    <div class="skill">
+      <div class="skill-name">Adobe Creative Suite</div>
+      <div class="skill-bar"><div class="bar-fill" style="width:88%"></div></div>
+    </div>
+    <div class="skill">
+      <div class="skill-name">Microsoft Office</div>
+      <div class="skill-bar"><div class="bar-fill" style="width:95%"></div></div>
+    </div>
+    <div class="skill">
+      <div class="skill-name">Stratejik Planlama</div>
+      <div class="skill-bar"><div class="bar-fill" style="width:80%"></div></div>
+    </div>
+    <div class="skill">
+      <div class="skill-name">Python</div>
+      <div class="skill-bar"><div class="bar-fill" style="width:70%"></div></div>
+    </div>
+    <div class="skill">
+      <div class="skill-name">Etkili İletişim</div>
+      <div class="skill-bar"><div class="bar-fill" style="width:90%"></div></div>
+    </div>
+    <div class="skill">
+      <div class="skill-name">Takım Çalışması</div>
+      <div class="skill-bar"><div class="bar-fill" style="width:92%"></div></div>
+    </div>
+    <div class="skill">
+      <div class="skill-name">Liderlik &amp; Koçluk</div>
+      <div class="skill-bar"><div class="bar-fill" style="width:85%"></div></div>
+    </div>
+    <div class="skill">
+      <div class="skill-name">Müşteri ve Paydaş İlişkileri</div>
+      <div class="skill-bar"><div class="bar-fill" style="width:88%"></div></div>
+    </div>
+    <div class="skill">
+      <div class="skill-name">Problem Çözme</div>
+      <div class="skill-bar"><div class="bar-fill" style="width:90%"></div></div>
+    </div>
+    <div class="skill">
+      <div class="skill-name">Esneklik &amp; Uyumluluk</div>
+      <div class="skill-bar"><div class="bar-fill" style="width:95%"></div></div>
+    </div>
+  </section>
+
+  <!-- 4. Ana İçerik -->
   <div class="layout">
-    <!-- 2a. Soldaki Sidebar -->
-    <aside id="skills">
-      <h2>Beceriler</h2>
-      <ul>
-        <li>NetCAD</li>
-        <li>QGIS</li>
-        <li>Photoshop</li>
-        <li>Veri Analizi</li>
-        <li>AutoCAD</li>
-        <li>Adobe Creative Suite</li>
-        <li>Microsoft Office</li>
-        <li>Stratejik Planlama</li>
-        <li>Python</li>
-        <li>Etkili İletişim</li>
-        <li>Takım Çalışması</li>
-        <li>Liderlik &amp; Koçluk</li>
-        <li>Müşteri ve Paydaş İlişkileri</li>
-        <li>Problem Çözme</li>
-        <li>Esneklik &amp; Uyumluluk</li>
-      </ul>
-    </aside>
 
-    <!-- 2b. Sağdaki Ana İçerik -->
     <main class="main-content">
-      <!-- 3. Parallax Hero Banner -->
-      <header class="hero fade-in" id="home">
-        <div class="parallax"></div>
-        <h1>Merhaba, ben Nil Sude Kuruoğlu</h1>
-        <p>Şehir &amp; Bölge Planlama | GIS &amp; Tasarım</p>
-      </header>
 
-      <!-- 4. Hakkımda -->
+      <!-- 5. Hakkımda -->
       <section id="about" class="container about fade-in">
         <h2>Hakkımda</h2>
         <p>2000 yılında Artvin’in Arhavi ilçesinde doğdum. 2014–2018 yılları arasında Arhavi Anadolu Lisesi’nden mezun oldum. 2025 yılında ise Mersin Üniversitesi Şehir ve Bölge Planlama Bölümü’nü yine %100 İngilizce eğitim programında tamamlayarak akademik yolculuğumu sonlandırdım.</p>
@@ -58,28 +103,63 @@
         <p>Yaratıcı yaklaşımım ve güçlü estetik duyarlılığımla her projeyi hem fonksiyonel hem görsel açıdan öne çıkarıyorum. Photoshop ve Illustrator ile hazırladığım görsel materyaller, fikirlerimi paydaşlara net ve ilgi çekici biçimde aktarmamı sağladı. Hızlı öğrenme yeteneğim ve esnek çalışma disiplinimle, insan odaklı ve yenilikçi kent tasarımlarına değer katmayı sürdürüyorum.</p>
       </section>
 
-      <!-- 5. Projeler -->
+      <!-- 6. Projeler -->
       <section id="projects" class="container projects fade-in">
         <h2>Projeler</h2>
         <div class="project-grid">
-          <!-- Örnek bir proje kartı; diğerlerini de aynı `fade-in project-card` şablonuyla ekle -->
           <div class="project-card fade-in">
             <a href="images/Ankara Conceptual Diagram Çalışması.jpg" target="_blank">
               <img src="images/Ankara Conceptual Diagram Çalışması.jpg" alt="Ankara Conceptual Diagram Çalışması">
             </a>
             <h3>Ankara Conceptual Diagram Çalışması</h3>
           </div>
-          <!-- … diğer proje kartları … -->
+          <div class="project-card fade-in">
+            <a href="images/Merzifon Proje 1.png" target="_blank">
+              <img src="images/Merzifon Proje 1.png" alt="Merzifon Proje 1">
+            </a>
+            <h3>Merzifon Proje 1</h3>
+          </div>
+          <div class="project-card fade-in">
+            <a href="images/Merzifon Proje 2.jpg" target="_blank">
+              <img src="images/Merzifon Proje 2.jpg" alt="Merzifon Proje 2">
+            </a>
+            <h3>Merzifon Proje 2</h3>
+          </div>
+          <div class="project-card fade-in">
+            <a href="images/Ankara Sentez 1.jpg" target="_blank">
+              <img src="images/Ankara Sentez 1.jpg" alt="Ankara Sentez 1">
+            </a>
+            <h3>Ankara Sentez 1</h3>
+          </div>
+          <div class="project-card fade-in">
+            <a href="images/Ankara Sentez 2.jpg" target="_blank">
+              <img src="images/Ankara Sentez 2.jpg" alt="Ankara Sentez 2">
+            </a>
+            <h3>Ankara Sentez 2</h3>
+          </div>
+          <div class="project-card fade-in">
+            <a href="images/Ankara Proje 1.jpg" target="_blank">
+              <img src="images/Ankara Proje 1.jpg" alt="Ankara Proje 1">
+            </a>
+            <h3>Ankara Proje 1</h3>
+          </div>
+          <div class="project-card fade-in">
+            <a href="images/Ankara Proje 2.jpg" target="_blank">
+              <img src="images/Ankara Proje 2.jpg" alt="Ankara Proje 2">
+            </a>
+            <h3>Ankara Proje 2</h3>
+          </div>
+          <div class="project-card fade-in">
+            <a href="images/Ankara Proje 3.jpg" target="_blank">
+              <img src="images/Ankara Proje 3.jpg" alt="Ankara Proje 3">
+            </a>
+            <h3>Ankara Proje 3</h3>
+          </div>
         </div>
       </section>
 
-      <!-- 6. İletişim -->
-      <section id="contact" class="container contact fade-in">
-        <h2>İletişim</h2>
-        <p>Email: <a href="mailto:nilkuruoglu1@gmail.com">nilkuruoglu1@gmail.com</a></p>
-      </section>
-
     </main>
+
   </div>
 
   <!-- 7. Footer -->
