@@ -1,4 +1,20 @@
 /* ======================================= */
+/* 0. Koyu/Açık Tema Değişkenleri          */
+/* ======================================= */
+:root {
+  --bg: #dcdedd;    /* açık mod arka plan */
+  --fg: #333;       /* açık mod yazı rengi */
+  --nav-bg: #FFB380;
+  --section-bg: #fff;
+}
+[data-theme="dark"] {
+  --bg: #2b2b2b;    /* koyu mod arka plan */
+  --fg: #eee;       /* koyu mod yazı rengi */
+  --nav-bg: #a66b3b;
+  --section-bg: #3a3a3a;
+}
+
+/* ======================================= */
 /* 1. Reset + Smooth Scroll                */
 /* ======================================= */
 * {
@@ -15,10 +31,10 @@ html {
 /* ======================================= */
 body {
   font-family: 'Lato', sans-serif;
-  background-color: #dcdedd; /* Yeni pastel arka plan rengi */
-  color: #333;
+  background-color: var(--bg);
+  color: var(--fg);
   line-height: 1.6;
-  padding-top: 60px; /* Menü sabit olduğundan içerik altına it */
+  padding-top: 60px;
 }
 
 /* ======================================= */
@@ -28,6 +44,8 @@ body {
   max-width: 1000px;
   margin: 0 auto;
   padding: 20px;
+  background-color: var(--section-bg);
+  border-radius: 8px;
 }
 
 /* ======================================= */
@@ -36,14 +54,21 @@ body {
 nav {
   position: sticky;
   top: 0;
-  background-color: #FFB380; /* Soft pastel turuncu */
+  background-color: var(--nav-bg);
   padding: 15px 0;
   text-align: center;
   z-index: 100;
 }
+nav button {
+  background: none;
+  border: none;
+  font-size: 1.2em;
+  margin-right: 10px;
+  cursor: pointer;
+}
 nav a {
   color: #fff;
-  margin: 0 20px;
+  margin: 0 15px;
   text-decoration: none;
   font-weight: bold;
 }
@@ -64,54 +89,41 @@ header.hero {
   color: #fff;
   text-shadow: 1px 1px 4px rgba(0,0,0,0.7);
 }
-header.hero h1 {
-  font-size: 2.5em;
-  margin: 0;
-}
-header.hero p {
-  font-size: 1.1em;
-  margin-top: 10px;
-}
 
 /* ======================================= */
-/* 6. Genel Bölüm Başlıkları              */
+/* 6. Bölüm Başlıkları ve Fade-In         */
 /* ======================================= */
-section {
-  margin: 40px 0;
+section, footer, header {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+section.visible, header.visible, footer.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 section h2 {
   margin-bottom: 10px;
-  border-bottom: 2px solid #333;
+  border-bottom: 2px solid var(--fg);
   display: inline-block;
   padding-bottom: 5px;
 }
 
 /* ======================================= */
-/* 7. Hakkımda Bölümü (Örnek)             */
-/* ======================================= */
-section#about {
-  background: #fff;
-  padding: 20px;
-  border-radius: 8px;
-}
-
-/* ======================================= */
-/* 8. Projeler Bölümü – Grid ve Kartlar   */
+/* 7. Projeler Bölümü – Grid ve Kartlar   */
 /* ======================================= */
 section#projects .project-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 20px;
 }
-
 .project-card {
-  background: #fff;
+  background-color: var(--section-bg);
   padding: 15px;
   border-radius: 8px;
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
   text-align: center;
 }
-
 .project-card img {
   width: 100%;
   height: 200px;
@@ -120,33 +132,22 @@ section#projects .project-grid {
   border-radius: 4px;
   margin-bottom: 10px;
 }
-
-/* Görsel link bloğu */
 .project-card a {
   display: block;
   text-decoration: none;
 }
 
 /* ======================================= */
-/* 9. İletişim Bölümü (Örnek)             */
+/* 8. İletişim & Footer                   */
 /* ======================================= */
 section#contact {
-  background: #fff;
+  background-color: var(--section-bg);
   padding: 20px;
-  border-radius: 8px;
 }
-section#contact h2 {
-  color: #0066cc;
-}
-
-/* ======================================= */
-/* 10. Footer                             */
-/* ======================================= */
 footer {
   text-align: center;
   padding: 20px 0;
-  background: #0066cc;
+  background-color: var(--nav-bg);
   color: #fff;
   margin-top: 40px;
 }
-
