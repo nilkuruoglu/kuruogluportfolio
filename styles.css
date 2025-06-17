@@ -1,38 +1,42 @@
-* { margin: 0; padding: 0; box-sizing: border-box; }
-body { font-family: Arial, sans-serif; line-height: 1.6; padding: 20px; }
-nav { background: #333; padding: 10px; text-align: center; }
-nav a { color: #fff; margin: 0 15px; text-decoration: none; }
-section { margin: 40px 0; }
-section h2 { margin-bottom: 10px; border-bottom: 2px solid #333; display: inline-block; }
-.project { margin-bottom: 20px; }
-.project img { max-width: 100%; height: auto; display: block; }
-footer { text-align: center; margin-top: 40px; font-size: 0.9em; color: #555; }
-/* 1. Genel sıfırlama */
+/* 1. Reset */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* 2. Sayfa ana font ve arka plan */
-body {
-  font-family: 'Lato', sans-serif;      /* Google Fonts’tan Lato kullandık */
-  background: #f2f2f2;                   /* Açık gri arka plan */
-  color: #333;                           /* Koyu gri yazı */
-  line-height: 1.6;
+/* 2. Pürüzsüz kaydırma */
+html {
+  scroll-behavior: smooth;
 }
+
+/* 3. Sayfa ana font, arka plan */
+body {
+  font-family: 'Lato', sans-serif;
+  background: #f2f2f2;
+  color: #333;
+  line-height: 1.6;
+  padding-top: 60px;     /* sticky menu için boşluk */
+}
+
+/* 4. Konteyner */
 .container {
   max-width: 1000px;
   margin: 0 auto;
   padding: 20px;
 }
+
+/* 5. Menü */
 nav {
-  background: #0066cc;      /* Canlı mavi */
+  position: sticky;
+  top: 0;
+  background: #0066cc;
   padding: 15px 0;
   text-align: center;
+  z-index: 100;
 }
 nav a {
-  color: #fff;              /* Beyaz metin */
+  color: #fff;
   margin: 0 20px;
   text-decoration: none;
   font-weight: bold;
@@ -40,10 +44,11 @@ nav a {
 nav a:hover {
   text-decoration: underline;
 }
-/* HERO BANNER */
+
+/* 6. Hero Banner */
 header.hero {
-  background: url('images/yenibanner.jpg') no-repeat center/cover;
-  height: 300px;
+  background: url('images/banner.jpg') no-repeat center/cover;
+  height: 300px;               /* İstersen 400px de yapabilirsin */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -59,24 +64,42 @@ header.hero p {
   font-size: 1.1em;
   margin-top: 10px;
 }
-/* === HERO BANNER === */
-header.hero {
-  /* arka planı doğru klasörden çağır */
-  background: url('images/banner.jpg') no-repeat center/cover;
-  height: 300px;               /* yükseklik, istersen 400px yapabilirsin */
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  color: #fff;                 /* yazılar beyaz */
-  text-shadow: 1px 1px 4px rgba(0,0,0,0.7);
+
+/* 7. Genel Bölüm Başlıkları */
+section {
+  margin: 40px 0;
 }
-header.hero h1 {
-  font-size: 2.5em;
-  margin: 0;
+section h2 {
+  margin-bottom: 10px;
+  border-bottom: 2px solid #333;
+  display: inline-block;
 }
-header.hero p {
-  font-size: 1.1em;
-  margin-top: 10px;
+
+/* 8. Projeler Bölümü (Grid Layout) */
+section#projects .project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
 }
-Add hero banner styles
+.project-card {
+  background: #fff;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  text-align: center;
+}
+.project-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
+
+/* 9. Footer */
+footer {
+  text-align: center;
+  padding: 20px 0;
+  background: #0066cc;
+  color: #fff;
+  margin-top: 40px;
+}
