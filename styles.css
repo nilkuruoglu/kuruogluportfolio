@@ -2,9 +2,9 @@
 /* 0. Tema Değişkenleri                   */
 /* ======================================= */
 :root {
-  --bg: #dcdedd;      /* açık mod arka plan */
-  --fg: #333;         /* açık mod yazı */
-  --nav-bg: #FFB380;  /* açık mod nav */
+  --bg: #dcdedd;
+  --fg: #333;
+  --nav-bg: #FFB380;
   --section-bg: #fff;
 }
 [data-theme="dark"] {
@@ -32,7 +32,72 @@ body {
 }
 
 /* ======================================= */
-/* 3. Konteyner + Layout                  */
+/* 3. Menü                                */
+/* ======================================= */
+nav {
+  position: sticky; top: 0;
+  background-color: var(--nav-bg);
+  padding: 15px 0; text-align: center; z-index: 100;
+}
+nav button {
+  background: none; border: none;
+  font-size: 1.2em; margin-right: 10px; cursor: pointer;
+}
+nav a {
+  color: #fff; margin: 0 15px; text-decoration: none; font-weight: bold;
+}
+nav a:hover { text-decoration: underline; }
+
+/* ======================================= */
+/* 4. Parallax Hero                       */
+/* ======================================= */
+header.hero {
+  position: relative; height: 300px; overflow: hidden;
+  display: flex; flex-direction: column; justify-content: center; align-items: center;
+  color: #fff; text-shadow: 1px 1px 4px rgba(0,0,0,0.7);
+}
+header.hero .parallax {
+  position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+  background: url('images/banner.jpg') center/cover fixed;
+  z-index: -1;
+}
+
+/* ======================================= */
+/* 5. Beceriler Bölümü (Cover Altı)       */
+/* ======================================= */
+.skills-cover {
+  background-color: var(--section-bg);
+  padding: 40px 20px;
+  text-align: center;
+}
+.skills-cover h2 {
+  margin-bottom: 30px;
+  font-size: 1.8em;
+  color: var(--fg);
+}
+.skill {
+  max-width: 600px;
+  margin: 10px auto;
+}
+.skill-name {
+  font-weight: bold;
+  margin-bottom: 5px;
+  text-align: left;
+}
+.skill-bar {
+  background: #e0e0e0;
+  border-radius: 5px;
+  overflow: hidden;
+  height: 12px;
+}
+.skill-bar .bar-fill {
+  height: 100%;
+  background: var(--nav-bg);
+  transition: width 1s ease-out;
+}
+
+/* ======================================= */
+/* 6. Layout ve Konteyner                 */
 /* ======================================= */
 .layout {
   display: flex;
@@ -49,68 +114,15 @@ body {
 }
 
 /* ======================================= */
-/* 4. Menü                                */
+/* 7. Fade-in Animasyon                   */
 /* ======================================= */
-nav {
-  position: sticky;
-  top: 0;
-  background-color: var(--nav-bg);
-  padding: 15px 0;
-  text-align: center;
-  z-index: 100;
+.fade-in { opacity: 0; transform: translateY(20px);
+  transition: opacity .6s ease-out, transform .6s ease-out;
 }
-nav button {
-  background: none;
-  border: none;
-  font-size: 1.2em;
-  margin-right: 10px;
-  cursor: pointer;
-}
-nav a {
-  color: #fff;
-  margin: 0 15px;
-  text-decoration: none;
-  font-weight: bold;
-}
-nav a:hover { text-decoration: underline; }
+.visible { opacity: 1; transform: translateY(0); }
 
 /* ======================================= */
-/* 5. Parallax Hero Banner                */
-/* ======================================= */
-header.hero {
-  position: relative;
-  height: 300px;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  color: #fff;
-  text-shadow: 1px 1px 4px rgba(0,0,0,0.7);
-}
-header.hero .parallax {
-  position: absolute;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  background: url('images/banner.jpg') center/cover fixed;
-  z-index: -1;
-}
-
-/* ======================================= */
-/* 6. Fade-in Animasyon                   */
-/* ======================================= */
-.fade-in {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-}
-.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* ======================================= */
-/* 7. Bölüm Başlıkları                    */
+/* 8. Bölüm Başlıkları                    */
 /* ======================================= */
 section h2 {
   margin-bottom: 10px;
@@ -120,47 +132,20 @@ section h2 {
 }
 
 /* ======================================= */
-/* 8. Sidebar (Beceriler)                 */
-/* ======================================= */
-#skills {
-  flex: 0 0 220px;
-  background-color: var(--section-bg);
-  padding: 20px;
-  border-radius: 8px;
-  position: sticky;
-  top: 80px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-}
-#skills h2 {
-  margin-bottom: 15px;
-  border-bottom: 2px solid var(--fg);
-  padding-bottom: 5px;
-}
-#skills ul { list-style: none; }
-#skills ul li { margin-bottom: 10px; font-size: 0.95em; }
-
-/* ======================================= */
 /* 9. Projeler Bölümü                     */
 /* ======================================= */
 section#projects .project-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px,1fr));
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 20px;
 }
 .project-card {
   background-color: var(--section-bg);
-  padding: 15px;
-  border-radius: 8px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-  text-align: center;
+  padding: 15px; border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1); text-align: center;
 }
 .project-card img {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-  object-position: center;
-  border-radius: 4px;
-  margin-bottom: 10px;
+  width: 100%; height: 200px; object-fit: cover; object-position: center;
+  border-radius: 4px; margin-bottom: 10px;
 }
 .project-card a { display: block; }
 
@@ -168,27 +153,16 @@ section#projects .project-grid {
 /* 10. Back to Top Butonu                 */
 /* ======================================= */
 #back-to-top {
-  position: fixed;
-  right: 20px;
-  bottom: 20px;
-  display: none;
-  background: var(--nav-bg);
-  color: #fff;
-  border: none;
-  padding: 10px 15px;
-  border-radius: 50%;
-  font-size: 1.2em;
-  cursor: pointer;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+  position: fixed; right: 20px; bottom: 20px;
+  display: none; background: var(--nav-bg); color: #fff;
+  border: none; padding: 10px 15px; border-radius: 50%;
+  font-size: 1.2em; cursor: pointer; box-shadow: 0 2px 5px rgba(0,0,0,0.3);
 }
 
 /* ======================================= */
 /* 11. Footer                             */
 /* ======================================= */
 footer {
-  text-align: center;
-  padding: 20px 0;
-  background-color: var(--nav-bg);
-  color: #fff;
-  margin-top: 40px;
+  text-align: center; padding: 20px 0;
+  background-color: var(--nav-bg); color: #fff; margin-top: 40px;
 }
