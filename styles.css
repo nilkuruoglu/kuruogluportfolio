@@ -17,7 +17,7 @@
 /* ======================================= */
 /* 1. Reset + Smooth Scroll                */
 /* ======================================= */
-* { margin:0; padding:0; box-sizing:border-box; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
 html { scroll-behavior: smooth; }
 
 /* ======================================= */
@@ -27,107 +27,168 @@ body {
   font-family: 'Lato', sans-serif;
   background-color: var(--bg);
   color: var(--fg);
-  line-height:1.6;
-  padding-top:60px;
+  line-height: 1.6;
+  padding-top: 60px;
 }
 
 /* ======================================= */
-/* 3. Konteyner                           */
+/* 3. Konteyner + Layout                  */
 /* ======================================= */
+.layout {
+  display: flex;
+  gap: 20px;
+  max-width: 1000px;
+  margin: 20px auto;
+  padding: 0 20px;
+}
 .container {
-  max-width:1000px;
-  margin:0 auto;
-  padding:20px;
   background-color: var(--section-bg);
-  border-radius:8px;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 40px;
 }
 
 /* ======================================= */
 /* 4. Menü                                */
 /* ======================================= */
 nav {
-  position:sticky; top:0;
+  position: sticky;
+  top: 0;
   background-color: var(--nav-bg);
-  padding:15px 0; text-align:center; z-index:100;
+  padding: 15px 0;
+  text-align: center;
+  z-index: 100;
 }
 nav button {
-  background:none; border:none; font-size:1.2em; margin-right:10px; cursor:pointer;
+  background: none;
+  border: none;
+  font-size: 1.2em;
+  margin-right: 10px;
+  cursor: pointer;
 }
 nav a {
-  color:#fff; margin:0 15px; text-decoration:none; font-weight:bold;
+  color: #fff;
+  margin: 0 15px;
+  text-decoration: none;
+  font-weight: bold;
 }
-nav a:hover { text-decoration:underline; }
+nav a:hover { text-decoration: underline; }
 
 /* ======================================= */
-/* 5. Parallax Hero                       */
+/* 5. Parallax Hero Banner                */
 /* ======================================= */
 header.hero {
   position: relative;
-  height:300px; overflow:hidden;
-  display:flex; flex-direction:column; justify-content:center; align-items:center;
-  color:#fff; text-shadow:1px 1px 4px rgba(0,0,0,0.7);
+  height: 300px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  text-shadow: 1px 1px 4px rgba(0,0,0,0.7);
 }
 header.hero .parallax {
-  position:absolute; top:0; left:0; width:100%; height:100%;
-  background:url('images/banner.jpg') center/cover fixed;
-  z-index:-1;
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: url('images/banner.jpg') center/cover fixed;
+  z-index: -1;
 }
 
 /* ======================================= */
 /* 6. Fade-in Animasyon                   */
 /* ======================================= */
 .fade-in {
-  opacity:0; transform:translateY(20px);
-  transition:opacity 0.6s ease-out, transform 0.6s ease-out;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
 }
-.visible { opacity:1; transform:translateY(0); }
+.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
 
 /* ======================================= */
 /* 7. Bölüm Başlıkları                    */
 /* ======================================= */
 section h2 {
-  margin-bottom:10px; border-bottom:2px solid var(--fg);
-  display:inline-block; padding-bottom:5px;
+  margin-bottom: 10px;
+  border-bottom: 2px solid var(--fg);
+  display: inline-block;
+  padding-bottom: 5px;
 }
 
 /* ======================================= */
-/* 8. Projeler Bölümü                     */
+/* 8. Sidebar (Beceriler)                 */
+/* ======================================= */
+#skills {
+  flex: 0 0 220px;
+  background-color: var(--section-bg);
+  padding: 20px;
+  border-radius: 8px;
+  position: sticky;
+  top: 80px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+#skills h2 {
+  margin-bottom: 15px;
+  border-bottom: 2px solid var(--fg);
+  padding-bottom: 5px;
+}
+#skills ul { list-style: none; }
+#skills ul li { margin-bottom: 10px; font-size: 0.95em; }
+
+/* ======================================= */
+/* 9. Projeler Bölümü                     */
 /* ======================================= */
 section#projects .project-grid {
-  display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-  gap:20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px,1fr));
+  gap: 20px;
 }
 .project-card {
-  background-color:var(--section-bg); padding:15px;
-  border-radius:8px; box-shadow:0 2px 5px rgba(0,0,0,0.1); text-align:center;
+  background-color: var(--section-bg);
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  text-align: center;
 }
 .project-card img {
-  width:100%; height:200px; object-fit:cover; object-position:center;
-  border-radius:4px; margin-bottom:10px;
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 4px;
+  margin-bottom: 10px;
 }
-.project-card a { display:block; }
-
-/* ======================================= */
-/* 9. İletişim                            */
-/* ======================================= */
-section#contact {
-  background-color:var(--section-bg); padding:20px; border-radius:8px;
-}
+.project-card a { display: block; }
 
 /* ======================================= */
 /* 10. Back to Top Butonu                 */
 /* ======================================= */
 #back-to-top {
-  position:fixed; right:20px; bottom:20px;
-  display:none; background:var(--nav-bg); color:#fff;
-  border:none; padding:10px 15px; border-radius:50%;
-  font-size:1.2em; cursor:pointer; box-shadow:0 2px 5px rgba(0,0,0,0.3);
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  display: none;
+  background: var(--nav-bg);
+  color: #fff;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 50%;
+  font-size: 1.2em;
+  cursor: pointer;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.3);
 }
 
 /* ======================================= */
 /* 11. Footer                             */
 /* ======================================= */
 footer {
-  text-align:center; padding:20px 0;
-  background-color:var(--nav-bg); color:#fff; margin-top:40px;
+  text-align: center;
+  padding: 20px 0;
+  background-color: var(--nav-bg);
+  color: #fff;
+  margin-top: 40px;
 }
