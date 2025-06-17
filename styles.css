@@ -229,15 +229,15 @@ footer {
   margin-top: 40px;
 }
 /* ======================================= */
+/* ======================================= */
 /* 12. Tema Düğmesini En Üste Taşı ve Büyüt */
 /* ======================================= */
-/* Tema düğmesini body’ye göre sabitle */
 #theme-toggle {
   position: fixed;
   top: 10px;
   right: 20px;
   z-index: 1000;        /* tüm içerik üstünde */
-  background: none;     /* arka plan zaten yok */
+  background: none;
   border: none;
   padding: 0;
   cursor: pointer;
@@ -245,8 +245,9 @@ footer {
 
 /* SVG ikonunu büyüt */
 #theme-toggle svg {
-  width: 32px;   /* istediğin boyuta çekebilirsin */
+  width: 32px;
   height: 32px;
+  fill: #fff;
   transition: transform 0.3s;
 }
 
@@ -255,9 +256,4 @@ footer {
   transform: scale(1.2);
 }
 
-/* Nav’in içine yerleştirilmiş <button>’ın orijinal konumunu gizlemesi için */
-/* (isteğe bağlı: nav’de de kalıyor ama görünmesini istemezsen) */
-nav > button#theme-toggle {
-  opacity: 0;        /* tamamen görünmez yapar, ama hala tıklanabilir */
-  pointer-events: none;
-}
+/* --- Nav içindeki orijinal butonu gizleyen kural kaldırıldı --- */
