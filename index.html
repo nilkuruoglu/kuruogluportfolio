@@ -183,21 +183,21 @@
   </button>
 
   <!-- 8. GLightbox JS -->
-  <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
+<script>
+  const themeBtn = document.getElementById('theme-toggle');
+  themeBtn.innerHTML =
+    '<svg id="icon-moon" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 0111.21 3c0-.21 0-.42.02-.63A10 10 0 1012.79 21a9.06 9.06 0 008.21-8.21z"/></svg>';
+  themeBtn.onclick = () => {
+    const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+    document.documentElement.setAttribute('data-theme', isDark ? '' : 'dark');
+    themeBtn.innerHTML = isDark
+      // şu an dark modda olduğumuzu varsayıp ampul gösteriyoruz
+      ? '<svg id="icon-light" viewBox="0 0 24 24"><path d="M9 21h6v-1H9v1zm3-19a7 7 0 00-7 7c0 2.5 1.21 4.72 3 6.12V17h8v-1.88c1.79-1.4 3-3.62 3-6.12a7 7 0 00-7-7z"/></svg>'
+      // açık moddaysak aya dön
+      : '<svg id="icon-moon" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 0111.21 3c0-.21 0-.42.02-.63A10 10 0 1012.79 21a9.06 9.06 0 008.21-8.21z"/></svg>';
+  };
+</script>
 
-  <!-- 9. Kendi script’lerimiz -->
-  <script>
-    // GLightbox initialize
-    const lightbox = GLightbox({ selector: '.glightbox' });
-
-    // Tema Toggle
-    const themeBtn = document.getElementById('theme-toggle');
-    themeBtn.onclick = () => {
-      const next = document.documentElement.getAttribute('data-theme') === 'dark' ? '' : 'dark';
-      document.documentElement.setAttribute('data-theme', next);
-      themeBtn.innerHTML = next
-        ? '<svg width="20" height="20" viewBox="0 0 24 24"><path fill="currentColor" d="M12 3a9 9 0 0 0 0 18 9 9 0 0 1 0-18z"/></svg>'
-        : '<svg width="20" height="20" viewBox="0 0 24 24"><path fill="currentColor" d="M2 12a10 10 0 1 0 20 0A10 10 0 0 0 2 12z"/></svg>';
     };
 
     // Fade-in Animasyon
