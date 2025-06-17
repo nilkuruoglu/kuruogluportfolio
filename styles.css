@@ -257,3 +257,16 @@ footer {
 }
 
 /* --- Nav içindeki orijinal butonu gizleyen kural kaldırıldı --- */
+/* Mobilde sidebar’ı alta al, tek kolon düzeni */
+@media (max-width: 768px) {
+  .layout {
+    flex-direction: column;
+  }
+  #skills {
+    position: relative;
+    top: auto;
+    width: 100%;
+    margin-bottom: 20px;
+  }
+}
+
