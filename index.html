@@ -2,7 +2,7 @@
 <html lang="tr">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Nil Kuruoğlu | Portfolyo</title>
   <link rel="stylesheet" href="styles.css?v=6">
 </head>
@@ -17,8 +17,9 @@
     <a href="#contact">İletişim</a>
   </nav>
 
-  <!-- 2. Hero Banner (Parallax) -->
+  <!-- 2. Parallax Hero Banner -->
   <header class="hero fade-in" id="home">
+    <div class="parallax"></div>
     <h1>Merhaba, ben Nil Sude Kuruoğlu</h1>
     <p>Şehir &amp; Bölge Planlama | GIS &amp; Tasarım</p>
   </header>
@@ -35,7 +36,63 @@
   <section id="projects" class="container projects fade-in">
     <h2>Projeler</h2>
     <div class="project-grid">
-      <!-- Kartlar burada... -->
+
+      <div class="project-card fade-in">
+        <a href="images/Ankara Conceptual Diagram Çalışması.jpg" target="_blank">
+          <img src="images/Ankara Conceptual Diagram Çalışması.jpg" alt="Ankara Conceptual Diagram Çalışması">
+        </a>
+        <h3>Ankara Conceptual Diagram Çalışması</h3>
+      </div>
+
+      <div class="project-card fade-in">
+        <a href="images/Merzifon Proje 1.png" target="_blank">
+          <img src="images/Merzifon Proje 1.png" alt="Merzifon Proje 1">
+        </a>
+        <h3>Merzifon Proje 1</h3>
+      </div>
+
+      <div class="project-card fade-in">
+        <a href="images/Merzifon Proje 2.jpg" target="_blank">
+          <img src="images/Merzifon Proje 2.jpg" alt="Merzifon Proje 2">
+        </a>
+        <h3>Merzifon Proje 2</h3>
+      </div>
+
+      <div class="project-card fade-in">
+        <a href="images/Ankara Sentez 1.jpg" target="_blank">
+          <img src="images/Ankara Sentez 1.jpg" alt="Ankara Sentez 1">
+        </a>
+        <h3>Ankara Sentez 1</h3>
+      </div>
+
+      <div class="project-card fade-in">
+        <a href="images/Ankara Sentez 2.jpg" target="_blank">
+          <img src="images/Ankara Sentez 2.jpg" alt="Ankara Sentez 2">
+        </a>
+        <h3>Ankara Sentez 2</h3>
+      </div>
+
+      <div class="project-card fade-in">
+        <a href="images/Ankara Proje 1.jpg" target="_blank">
+          <img src="images/Ankara Proje 1.jpg" alt="Ankara Proje 1">
+        </a>
+        <h3>Ankara Proje 1</h3>
+      </div>
+
+      <div class="project-card fade-in">
+        <a href="images/Ankara Proje 2.jpg" target="_blank">
+          <img src="images/Ankara Proje 2.jpg" alt="Ankara Proje 2">
+        </a>
+        <h3>Ankara Proje 2</h3>
+      </div>
+
+      <div class="project-card fade-in">
+        <a href="images/Ankara Proje 3.jpg" target="_blank">
+          <img src="images/Ankara Proje 3.jpg" alt="Ankara Proje 3">
+        </a>
+        <h3>Ankara Proje 3</h3>
+      </div>
+
     </div>
   </section>
 
@@ -50,22 +107,22 @@
     <p>© 2025 Nil Sude Kuruoğlu</p>
   </footer>
 
-  <!-- Back to Top Butonu -->
-  <button id="back-to-top" aria-label="Yukarı dön">↑</button>
+  <!-- Back to Top Button -->
+  <button id="back-to-top" aria-label="Başa dön">↑</button>
 
-  <!-- Tema değiştirici, scroll animasyonları ve Back-to-Top -->
+  <!-- Scripts -->
   <script>
     // Tema Toggle
     const themeBtn = document.getElementById('theme-toggle');
-    themeBtn.addEventListener('click', () => {
+    themeBtn.onclick = () => {
       const next = document.documentElement.getAttribute('data-theme') === 'dark' ? '' : 'dark';
       document.documentElement.setAttribute('data-theme', next);
-      themeBtn.textContent = next === 'dark' ? '🌞' : '🌙';
-    });
+      themeBtn.textContent = next ? '🌞' : '🌙';
+    };
 
-    // Scroll Animasyonları
-    const io = new IntersectionObserver((entries) => {
-      entries.forEach(e => {
+    // Fade-in Animasyon
+    const io = new IntersectionObserver((ents) => {
+      ents.forEach(e => {
         if (e.isIntersecting) {
           e.target.classList.add('visible');
           io.unobserve(e.target);
@@ -77,12 +134,9 @@
     // Back to Top
     const backBtn = document.getElementById('back-to-top');
     window.addEventListener('scroll', () => {
-      if (window.scrollY > 300) backBtn.classList.add('visible');
-      else backBtn.classList.remove('visible');
+      backBtn.style.display = window.scrollY > 300 ? 'block' : 'none';
     });
-    backBtn.addEventListener('click', () => {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
+    backBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
   </script>
 
 </body>
