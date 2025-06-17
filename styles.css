@@ -1,32 +1,38 @@
-/* 1. Reset */
+/* ======================================= */
+/* 1. Reset + Smooth Scroll                */
+/* ======================================= */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-
-/* 2. Pürüzsüz kaydırma */
 html {
   scroll-behavior: smooth;
 }
 
-/* 3. Sayfa ana font, arka plan */
+/* ======================================= */
+/* 2. Genel Sayfa Ayarları                 */
+/* ======================================= */
 body {
   font-family: 'Lato', sans-serif;
   background: #f2f2f2;
   color: #333;
   line-height: 1.6;
-  padding-top: 60px;     /* sticky menu için boşluk */
+  padding-top: 60px; /* Menü sabit olduğundan içerik altına it */
 }
 
-/* 4. Konteyner */
+/* ======================================= */
+/* 3. Konteyner                           */
+/* ======================================= */
 .container {
   max-width: 1000px;
   margin: 0 auto;
   padding: 20px;
 }
 
-/* 5. Menü */
+/* ======================================= */
+/* 4. Menü (Sticky)                       */
+/* ======================================= */
 nav {
   position: sticky;
   top: 0;
@@ -45,10 +51,12 @@ nav a:hover {
   text-decoration: underline;
 }
 
-/* 6. Hero Banner */
+/* ======================================= */
+/* 5. Hero Banner                         */
+/* ======================================= */
 header.hero {
   background: url('images/banner.jpg') no-repeat center/cover;
-  height: 300px;               /* İstersen 400px de yapabilirsin */
+  height: 300px;              /* İstersen 400px yapabilirsin */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -65,7 +73,9 @@ header.hero p {
   margin-top: 10px;
 }
 
-/* 7. Genel Bölüm Başlıkları */
+/* ======================================= */
+/* 6. Genel Bölüm Başlıkları              */
+/* ======================================= */
 section {
   margin: 40px 0;
 }
@@ -73,14 +83,41 @@ section h2 {
   margin-bottom: 10px;
   border-bottom: 2px solid #333;
   display: inline-block;
+  padding-bottom: 5px;
 }
 
-/* 8. Projeler Bölümü (Grid Layout) */
+/* ======================================= */
+/* 7. Hakkımda Bölümü (Örnek)             */
+/* ======================================= */
+section#about {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+}
+section#about .profile-pic {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #0066cc;
+}
+section#about .about-text h2 {
+  color: #0066cc;
+  margin-bottom: 10px;
+}
+
+/* ======================================= */
+/* 8. Projeler Bölümü – Grid ve Kartlar   */
+/* ======================================= */
 section#projects .project-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 20px;
 }
+
 .project-card {
   background: #fff;
   padding: 15px;
@@ -88,14 +125,31 @@ section#projects .project-grid {
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
   text-align: center;
 }
+
 .project-card img {
   width: 100%;
-  height: auto;
+  height: 200px;         /* Tüm kartlarda aynı yükseklik */
+  object-fit: cover;     /* Oranı bozmadan kırp */
+  object-position: center;
   border-radius: 4px;
   margin-bottom: 10px;
 }
 
-/* 9. Footer */
+/* ======================================= */
+/* 9. İletişim Bölümü (Örnek)             */
+/* ======================================= */
+section#contact {
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+}
+section#contact h2 {
+  color: #0066cc;
+}
+
+/* ======================================= */
+/* 10. Footer                             */
+/* ======================================= */
 footer {
   text-align: center;
   padding: 20px 0;
