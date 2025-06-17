@@ -35,54 +35,97 @@ body {
 /* 3. Menü                                */
 /* ======================================= */
 nav {
-  position: sticky; top: 0;
+  position: sticky;
+  top: 0;
   background-color: var(--nav-bg);
-  padding: 15px 0; text-align: center; z-index: 100;
+  padding: 10px 0;
+  text-align: center;
+  z-index: 100;
 }
 nav button {
-  background: none; border: none;
-  font-size: 1.2em; margin-right: 10px; cursor: pointer;
+  background: none;
+  border: none;
+  cursor: pointer;
+  vertical-align: middle;
+  margin-right: 10px;
+}
+nav button svg {
+  fill: #fff;
+  transition: transform 0.3s;
+}
+nav button:hover svg {
+  transform: scale(1.2);
 }
 nav a {
-  color: #fff; margin: 0 15px; text-decoration: none; font-weight: bold;
+  color: #fff;
+  margin: 0 12px;
+  text-decoration: none;
+  font-weight: bold;
 }
-nav a:hover { text-decoration: underline; }
+nav a .nav-icon {
+  fill: #fff;
+  margin-right: 4px;
+  vertical-align: middle;
+  transition: transform 0.3s, opacity 0.3s;
+  opacity: 0.6;
+}
+nav a:hover .nav-icon {
+  transform: translateX(4px);
+  opacity: 1;
+}
 
 /* ======================================= */
 /* 4. Parallax Hero                       */
 /* ======================================= */
 header.hero {
-  position: relative; height: 300px; overflow: hidden;
-  display: flex; flex-direction: column; justify-content: center; align-items: center;
-  color: #fff; text-shadow: 1px 1px 4px rgba(0,0,0,0.7);
+  position: relative;
+  height: 300px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  text-shadow: 1px 1px 4px rgba(0,0,0,0.7);
 }
 header.hero .parallax {
-  position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
   background: url('images/banner.jpg') center/cover fixed;
   z-index: -1;
 }
 
 /* ======================================= */
-/* 5. Beceriler Bölümü (Cover Altı)       */
+/* 5. Layout ve Sidebar                   */
 /* ======================================= */
-.skills-cover {
-  background-color: var(--section-bg);
-  padding: 40px 20px;
-  text-align: center;
+.layout {
+  display: flex;
+  gap: 20px;
+  max-width: 1000px;
+  margin: 20px auto;
+  padding: 0 20px;
 }
-.skills-cover h2 {
-  margin-bottom: 30px;
-  font-size: 1.8em;
-  color: var(--fg);
+#skills {
+  flex: 0 0 200px;
+  background-color: var(--section-bg);
+  padding: 20px;
+  border-radius: 8px;
+  position: sticky;
+  top: 80px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+#skills h2 {
+  margin-bottom: 15px;
+  border-bottom: 2px solid var(--fg);
+  padding-bottom: 5px;
 }
 .skill {
-  max-width: 600px;
-  margin: 10px auto;
+  margin-bottom: 15px;
 }
 .skill-name {
   font-weight: bold;
   margin-bottom: 5px;
-  text-align: left;
 }
 .skill-bar {
   background: #e0e0e0;
@@ -97,15 +140,8 @@ header.hero .parallax {
 }
 
 /* ======================================= */
-/* 6. Layout ve Konteyner                 */
+/* 6. Container (Hakkımda, Projeler, vs.)  */
 /* ======================================= */
-.layout {
-  display: flex;
-  gap: 20px;
-  max-width: 1000px;
-  margin: 20px auto;
-  padding: 0 20px;
-}
 .container {
   background-color: var(--section-bg);
   border-radius: 8px;
@@ -116,10 +152,15 @@ header.hero .parallax {
 /* ======================================= */
 /* 7. Fade-in Animasyon                   */
 /* ======================================= */
-.fade-in { opacity: 0; transform: translateY(20px);
-  transition: opacity .6s ease-out, transform .6s ease-out;
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
 }
-.visible { opacity: 1; transform: translateY(0); }
+.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
 
 /* ======================================= */
 /* 8. Bölüm Başlıkları                    */
@@ -132,37 +173,58 @@ section h2 {
 }
 
 /* ======================================= */
-/* 9. Projeler Bölümü                     */
+/* 9. Projeler Bölümü ve Lightbox         */
 /* ======================================= */
 section#projects .project-grid {
-  display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 20px;
 }
 .project-card {
   background-color: var(--section-bg);
-  padding: 15px; border-radius: 8px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1); text-align: center;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  text-align: center;
 }
 .project-card img {
-  width: 100%; height: 200px; object-fit: cover; object-position: center;
-  border-radius: 4px; margin-bottom: 10px;
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+  margin-bottom: 10px;
 }
-.project-card a { display: block; }
 
 /* ======================================= */
 /* 10. Back to Top Butonu                 */
 /* ======================================= */
 #back-to-top {
-  position: fixed; right: 20px; bottom: 20px;
-  display: none; background: var(--nav-bg); color: #fff;
-  border: none; padding: 10px 15px; border-radius: 50%;
-  font-size: 1.2em; cursor: pointer; box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  display: none;
+  background: var(--nav-bg);
+  color: #fff;
+  border: none;
+  padding: 10px;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+}
+#back-to-top .back-icon {
+  fill: #fff;
+  transition: transform 0.3s;
+}
+#back-to-top:hover .back-icon {
+  transform: scale(1.2);
 }
 
 /* ======================================= */
 /* 11. Footer                             */
 /* ======================================= */
 footer {
-  text-align: center; padding: 20px 0;
-  background-color: var(--nav-bg); color: #fff; margin-top: 40px;
+  text-align: center;
+  padding: 20px 0;
+  background-color: var(--nav-bg);
+  color: #fff;
+  margin-top: 40px;
 }
